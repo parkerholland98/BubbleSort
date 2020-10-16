@@ -1,0 +1,38 @@
+public class BubbleSort {
+    int[] bubblesort(int[] arr){
+        //Variables
+        int[] temp_arr = arr;
+        int temp1, temp2, phold;
+        int size = temp_arr.length;
+
+        for(int i = 0; i < size - 1; i++){
+            for(int j = 0; j < size - i - 1; j++){
+                temp1 = temp_arr[j];
+                temp2 = temp_arr[j+1];
+
+                if(temp1 > temp2){
+                    phold = temp1;
+                    temp1 = temp2;
+                    temp2 = phold;
+                    temp_arr[j] = temp1;
+                    temp_arr[j+1] = temp2;
+                }
+            }//nester for
+        }//nested for
+        return temp_arr;
+    }// end to bubble sort
+
+    void print_array(int[] temp){
+        int size = temp.length;
+        for(int i = 0; i < size; i++){
+            System.out.print("," + temp[i]+" ");
+        }
+    }
+    public static void main(String [] args){
+        int[] array = {5,3,2};
+
+        BubbleSort array_new = new BubbleSort();
+        array_new.bubblesort(array);
+        array_new.print_array(array);
+    }// end to main
+}// end to class
